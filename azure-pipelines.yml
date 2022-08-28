@@ -36,5 +36,5 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'Docker Hub'
         dockerComposeFile: '**/docker-compose.yml'
-        dockerComposeCommand: docker compose up
+        dockerComposeCommand: compose up
         action: 'Run a Docker Compose command'

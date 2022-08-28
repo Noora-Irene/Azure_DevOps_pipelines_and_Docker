@@ -20,6 +20,10 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: DownloadSecureFile@1
+      inputs:
+        secureFile: '.env'
+        retryCount: '5'
     - task: Docker@2
       displayName: Build an image
       inputs:

@@ -1,6 +1,4 @@
 # Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
 - main
@@ -29,5 +27,5 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'Docker Hub'
         dockerComposeFile: '**/docker-compose.yml'
-        dockerComposeCommand: up
+        dockerComposeCommand: push
         action: 'Run a Docker Compose command'

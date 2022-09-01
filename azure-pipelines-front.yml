@@ -28,12 +28,12 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.SourcesDirectory)/backend/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/frontend/Dockerfile'
         tags: |
           $(tag)
-    - task: DockerCompose@0
+    - task: Docker@2
       inputs:
-        containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: 'Docker Hub'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
+        containerRegistry: 'Docker Hub'
+        repository: 'noorairene / certificates-front'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'

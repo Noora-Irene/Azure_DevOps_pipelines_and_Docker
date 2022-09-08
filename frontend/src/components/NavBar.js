@@ -7,8 +7,8 @@ const NavBar = () => {
       <>
          <Navbar bg="light" variant="light" fixed="top" position="fixed">
             <Nav className="justify-content-end">
-               <Nav.Link to={'/home'}>Certificates</Nav.Link>
                <Nav.Link to={'/profile'}>Profile</Nav.Link>
+               <Nav.Link to={'/home'}>Certificates</Nav.Link>
             </Nav>
          </Navbar>
       </>

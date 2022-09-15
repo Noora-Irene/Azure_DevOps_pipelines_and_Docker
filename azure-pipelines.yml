@@ -1,0 +1,16 @@
+# Docker
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: DockerCompose@0
+    inputs:
+      containerregistrytype: 'Container Registry'
+      dockerRegistryEndpoint: 'Docker Hub'
+      dockerComposeFile: '**/docker-compose.yml'
+      action: 'Push services'
+      includeLatestTag: true
+

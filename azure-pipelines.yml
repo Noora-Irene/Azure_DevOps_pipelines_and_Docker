@@ -8,7 +8,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
   dockerhubNS: 'noorairene'
-  ImageNames: 'cert-backend'
+  ImageNames: 'cert-backend:latest'
 
 stages:
 - stage: Build

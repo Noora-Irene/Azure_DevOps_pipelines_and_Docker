@@ -7,8 +7,6 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  dockerhubNS: 'noorairene'
-  ImageNames: 'noorairene/cert-backend'
 
 stages:
 - stage: Build
@@ -25,9 +23,9 @@ stages:
         retryCount: '5'
     - task: DockerCompose@0
       inputs:
-       projectName: $(dockerhubNS)/$(ImageNames)
        containerregistrytype: 'Container Registry'
        dockerRegistryEndpoint: 'Docker Hub'
+       projectName: 'noorairene/cert-backend'
        dockerComposeFile: '**/docker-compose.yml'
        action: 'Push services'
        includeLatestTag: true

@@ -5,7 +5,7 @@ services:
     image: certificates/back
     container_name: certificates-backend
     ports:
-      - '8080:8080'
+      - '80:80'
     volumes:
       - ./backend:/app
       - /app/node_modules

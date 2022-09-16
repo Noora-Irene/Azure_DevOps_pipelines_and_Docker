@@ -20,13 +20,12 @@ stages:
     - task: DownloadSecureFile@1
       inputs:
         secureFile: '.env'
-        retryCount: '5'
+        retryCount: '3'
     - task: DockerCompose@0
       inputs:
-       containerregistrytype: 'Container Registry'
-       dockerRegistryEndpoint: 'Docker Hub'
-       projectName: 'noorairene/cert-backend'
-       dockerComposeFile: '**/docker-compose.yml'
-       action: 'Push services'
-       includeLatestTag: true
-
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'Docker Hub'
+        dockerComposeFile: '**/docker-compose.yml'
+        projectName: 'noorairene'
+        qualifyImageNames: false
+        action: 'Push services'

@@ -6,7 +6,7 @@ resources:
   - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
+  tag: 'noorairene'
 
 stages:
 - stage: Build

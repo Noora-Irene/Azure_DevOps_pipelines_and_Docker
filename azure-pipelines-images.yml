@@ -7,10 +7,9 @@ resources:
 
 stages:
 - stage: Build
-  displayName: Build and push image
   jobs:
   - job: Build
-    displayName: Back and front
+    displayName: Build back and front images
     pool:
       vmImage: ubuntu-latest
     steps:

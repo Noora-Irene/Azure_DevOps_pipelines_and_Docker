@@ -1,7 +1,4 @@
 # Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
 - main
 
@@ -9,7 +6,7 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
+  tag: 'latest'
 
 stages:
 - stage: Build
@@ -34,6 +31,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'noorairene / certificates-back'
+        repository: 'noorairene/cert-backend'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'

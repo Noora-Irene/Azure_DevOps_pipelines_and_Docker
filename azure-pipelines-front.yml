@@ -1,7 +1,4 @@
 # Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
 - main
 
@@ -20,10 +17,6 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: DownloadSecureFile@1
-      inputs:
-        secureFile: '.env'
-        retryCount: '5'
     - task: Docker@2
       displayName: Build an image
       inputs:
@@ -34,6 +27,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'noorairene / certificates-front'
+        repository: 'noorairene/cert-frontend'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'

@@ -5,15 +5,12 @@ trigger:
 resources:
 - repo: self
 
-variables:
-   tag: '$(Build.BuildId)'
-
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build and push image
   jobs:
   - job: Build
-    displayName: Build
+    displayName: Back and front
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -25,11 +22,13 @@ stages:
       inputs:
         containerRegistry: 'Docker Hub'
         repository: 'noorairene/cert-backend'
+        tags: 'back'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
         repository: 'noorairene/cert-frontend'
+        tags: 'front'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'

@@ -10,7 +10,6 @@ COPY . .
 
 EXPOSE 80
 
-ENV PORT=port
 ENV DB_URI=uri
 
 CMD ["npm", "start"]

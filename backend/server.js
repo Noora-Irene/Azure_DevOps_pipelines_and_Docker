@@ -10,7 +10,8 @@ const indexRoutes = require('./routes/index.routes');
    origin: 'http://localhost:8081/'
 };*/
 
-const PORT = process.env.PORT;
+const PORT = 80;
+const DB_URI = process.env.DB_URI;
 
 //exp.use(cors(corsOption));
 exp.use(function (req, res, next) {
@@ -26,7 +27,7 @@ exp.use(indexRoutes);
 
 mongoose
    .connect(
-      process.env.DB_URI,
+      DB_URI,
       {
          useNewUrlParser: true,
          useUnifiedTopology: true

@@ -5,6 +5,7 @@ properties:
   containers:
   - name: cert-backend
     properties:
+      environmentVariables: $(dbUri)
       image: noorairene/cert-backend:back
       resources:
         requests:

@@ -1,5 +1,5 @@
 apiVersion: 2019-12-01
-location: eastus
+location: northeurope
 name: theContainerGroup
 properties:
   containers:
@@ -19,10 +19,14 @@ properties:
         requests:
           cpu: 1
           memoryInGb: 1.5
+      ports:
+      - port: 3000
   osType: Linux
   ipAddress:
     type: Public
     ports:
+    - protocol: tcp
+      port: 80
     - protocol: tcp
       port: 3000
 type: Microsoft.ContainerInstance/containerGroups

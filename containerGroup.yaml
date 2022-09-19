@@ -6,9 +6,6 @@ properties:
   - name: cert-backend
     properties:
       image: noorairene/cert-backend:back
-      environmentVariables:
-      - name: DB_URI
-      - value: $DB_URI
       resources:
         requests:
           cpu: 1

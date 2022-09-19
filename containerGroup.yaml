@@ -5,7 +5,6 @@ properties:
   containers:
   - name: cert-backend
     properties:
-      environmentVariables: DB_URI
       image: noorairene/cert-backend:back
       resources:
         requests:

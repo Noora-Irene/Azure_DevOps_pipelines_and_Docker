@@ -1,0 +1,28 @@
+apiVersion: 2019-12-01
+location: eastus
+name: theContainerGroup
+properties:
+  containers:
+  - name: cert-backend
+    properties:
+      image: noorairene/cert-backend:back
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+      ports:
+      - port: 80
+  - name: cert-frontend
+    properties:
+      image: noorairene/cert-frontend:front
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: tcp
+      port: 3000
+type: Microsoft.ContainerInstance/containerGroups

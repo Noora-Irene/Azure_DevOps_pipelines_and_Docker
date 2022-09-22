@@ -12,4 +12,4 @@ EXPOSE 80
 
 ENV DB_URI=uri
 
-CMD ["npm", "server.js"]
+CMD ["npm", "start"]

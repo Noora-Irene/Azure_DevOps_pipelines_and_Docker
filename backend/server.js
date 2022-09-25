@@ -10,7 +10,7 @@ const indexRoutes = require('./routes/index.routes');
    origin: 'http://localhost:8081/'
 };*/
 
-const PORT = 80;
+const PORT = 8080;
 const DB_URI = process.env.DB_URI;
 
 //exp.use(cors(corsOption));
